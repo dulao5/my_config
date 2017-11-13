@@ -1,0 +1,3 @@
+#!/bin/sh
+
+ssh -A alice-1 'cat ~/clipboard.txt' |~/bin/clear_color | pbcopy

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+OLD_FILE=$1
+
+BASE_FILE=$(basename $1)
+
+NEW_FILE=$BASE_FILE.mp3
+
+ffmpeg -i "$OLD_FILE" -vn -acodec libmp3lame  "$NEW_FILE"
+
+

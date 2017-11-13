@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/Users/zhigang.du/src/hubot/scripts'
+let g:netrw_dirhist_2='/Users/zhigang.du/src/stadium-server/.vagrant'
+let g:netrw_dirhist_3='/Users/zhigang.du/src/stadium-server/.vagrant/machines'
+let g:netrw_dirhist_4='/Users/zhigang.du/src/stadium-server/.vagrant/machines/aggregator'
+let g:netrw_dirhist_5='/Users/zhigang.du/src/stadium-server/.vagrant/machines/aggregator/virtualbox'
+let g:netrw_dirhist_6='/Users/zhigang.du/src/stadium-server/test-kitchen'
+let g:netrw_dirhist_7='/Users/zhigang.du/src/ops/tools/almiraj/config/ms-stadium'
+let g:netrw_dirhist_8='/Users/zhigang.du/src/stadium-server/tasks'

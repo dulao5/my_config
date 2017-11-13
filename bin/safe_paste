@@ -1,0 +1,27 @@
+#!/usr/bin/osascript -l JavaScript
+
+var app = Application.currentApplication()
+app.includeStandardAdditions = true
+
+//var text = app.theClipboard()
+var text = app.doShellScript('pbpaste')
+text = text.replace(/[\r\n\s]{1,}$/, '')
+
+var lines = text.split(/\r\n|\n|\r/)
+text = lines.join("; ")
+
+ObjC.import("Cocoa")
+var ns_text = $.NSString.alloc.initWithUTF8String(text)
+ns_text.writeToFileAtomicallyEncodingError("/tmp/safe_paste", true, $.NSUTF8StringEncoding, null);
+app.doShellScript("export LANG=ja_JP.UTF-8 ; cat /tmp/safe_paste | pbcopy")
+
+//var displayDialogOpts = {
+//  withTitle : "本当に下記の" + lines.length + "行の内容を入力しますか?",
+//  withIcon  : "caution",
+//  defaultButton : (lines.length > 1) ? 1 : 2
+//}
+//
+//app.displayDialog(text, displayDialogOpts)
+
+var sys_events = Application("System Events")
+sys_events.keystroke( "v" , {"using" : "command down" })

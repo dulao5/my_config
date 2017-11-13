@@ -1,0 +1,39 @@
+[alias]
+    co = checkout
+    cm = commit
+    st = status
+    br = branch
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+[core]
+	editor = vim --noplugin -c \"set fenc=utf-8\"
+	excludesfile = /Users/zhigang.du/.gitignore_global
+[user]
+	name = zhigang.du
+	email = dulao5@gmail.com
+[mergetool "gvimdiff3"]
+	cmd = gvim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+[mergetool "vimdiff3"]
+	cmd = vim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+[mergetool "vimdiff2"]
+	cmd = vim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$REMOTE\"
+[mergetool "vimdiff"]
+#	cmd = vim -f -d \"$BASE\" \"$REMOTE\" -c \":sp \" -c \"wincmd J\" -c \":e $MERGED\" -c \":resize -10\"
+	cmd = vim -f -d \"$BASE\" \"$REMOTE\" -c \":sp \" -c \"wincmd J\" -c \":e $MERGED\" -c \":vsp\" -c \"wincmd L\" -c \":e $LOCAL\"
+[merge]
+#	tool = vimdiff3
+#	tool = vimdiff2
+	tool = vimdiff
+[gc]
+	reflogExpire = 100 days
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[pager]
+	log = diff-highlight | less
+	show = diff-highlight | less
+	diff = diff-highlight | less
+[diff]
+	compactionHeuristic = true

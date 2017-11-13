@@ -1,0 +1,16 @@
+ag.vim
+emmet-vim
+fonts
+html5.vim
+neobundle.vim
+neocomplcache
+neosnippet
+neosnippet-snippets
+syntastic
+unite.vim
+vim-airline
+vim-coffee-script
+vim-indent-guides
+vim-repeat
+vim-surround
+vimproc

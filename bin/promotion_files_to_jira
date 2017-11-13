@@ -1,0 +1,3 @@
+#!/bin/sh
+
+sort |awk '/_user_/{printf "| ユーザー用 | [^%s] |\n", $0} /_we_/{printf "| ミクシィテスト用 | [^%s] |\n", $0}  /_client_/{line=$0; gsub(/promotion_id_/, "", line); gsub(/_client_.*/, "", line); print line;  printf "| KONAMIテスト用 | [^%s] |\n", $0}'
