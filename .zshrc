@@ -93,25 +93,8 @@ export PATH="/Users/zhigang.du/bin:$PATH"
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-code () {
-    if [[ $# = 0 ]]
-    then
-        open -a "Visual Studio Code"
-    else
-        [[ $1 = /* ]] && F="$1" || F="$PWD/${1#./}"
-        open -a "Visual Studio Code" --args "$F"
-    fi
-}
-
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
 
-fg() {
-  if [[ $# -eq 1 && $1 = - ]]; then
-    builtin fg %-
-  else
-    builtin fg %"$@"
-  fi
-}
